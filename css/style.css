@@ -1,0 +1,506 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+
+:root {
+  --main-color: #4095b0;
+  --black: #13131a;
+  --bg: #ffff;
+  --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+* {
+  font-family: "Open Sans";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 5rem;
+}
+
+body {
+  background: var(--bg);
+}
+
+section {
+  padding: 2rem 7%;
+}
+
+.heading {
+  text-align: center;
+  color: rgb(8, 0, 0);
+  padding-bottom: 1rem;
+  font-size: 4rem;
+  font-family: "Open Sans";
+  font-weight: lighter;
+}
+
+.heading span {
+  color: var(--black);
+}
+
+.header {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 7%;
+  border-bottom: var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header .logo img {
+  height: 6rem;
+}
+
+.header .navbar a {
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  color: var(--black);
+}
+
+.header .navbar a:hover {
+  color: var(--main-color);
+  padding-bottom: 0.5rem;
+}
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url(../images/home-img.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home .content {
+  width: 100%;
+}
+
+.home .content h1 {
+  display: flex;
+  font-size: 40px;
+  font-family: "Open Sans";
+  font-weight: lighter;
+  color: #fff;
+  margin: auto;
+  width: 68%;
+  padding-left: 10px;
+  background-color: #2b3237;
+  background-size: auto;
+  opacity: 0.5;
+}
+
+.content span {
+  display: flex;
+  font-size: 13px;
+  padding-left: 1rem;
+  margin: auto;
+  width: 18rem;
+  color: #eee;
+  text-align: center;
+  background-color: #4ca2be;
+  opacity: 2;
+}
+
+.content .scrollDown {
+  position: absolute;
+  display: flex;
+  top: 90%;
+  left: 49%;
+  color: grey;
+  opacity: 0.8;
+}
+.content h4 {
+  position: absolute;
+  display: flex;
+  top: 95%;
+  left: 47%;
+  color: grey;
+  font-family: "Open Sans";
+  font-weight: lighter;
+}
+
+.services {
+  background: url(../images/services_bg.png) no-repeat;
+  flex-wrap: wrap;
+}
+.services p {
+  padding: 2px;
+  text-align: center;
+  border: var(--border);
+}
+.carousel-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  font-family: "Open Sans";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+.box {
+  padding: 2rem;
+  text-align: center;
+  border: var(--border);
+}
+
+.box img {
+  height: 10rem;
+}
+
+.box h3 {
+  color: var(--black);
+  font-size: 2rem;
+  padding: 1rem 0;
+  font-family: "Open Sans";
+  font-weight: lighter;
+}
+
+.box .img-text {
+  color: var(--black);
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+  font-family: "Open Sans";
+  font-weight: lighter;
+}
+
+.img-text span {
+  font-size: 1.5rem;
+  font-family: "Open Sans";
+  font-weight: lighter;
+}
+.box:hover {
+  background: var(--main-color);
+}
+.box:hover > * {
+  color: var(--black);
+}
+
+.work {
+  background: #2b3237;
+  flex-wrap: wrap;
+}
+.work p {
+  padding: 2px;
+  text-align: center;
+  color: #fff;
+}
+.work .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.row > .column {
+  padding: 1 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(240, 248, 255, 0.18);
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 70%;
+  max-width: 60rem;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.contact p {
+  padding: 2px;
+  padding-bottom: 2rem;
+  text-align: center;
+  color: var (--black);
+}
+
+.contact .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+h5 {
+  font-size: 16px;
+  padding-top: 3em;
+  margin-left: 10rem;
+  text-align: justify;
+  font-family: "Open Sans";
+}
+.info {
+  margin-top: 1srem;
+  margin-left: 10rem;
+  text-align: justify;
+  color: var (--black);
+  font-size: 12px;
+  font-family: "Open Sans";
+}
+.info-icons {
+  margin-top: 3rem;
+  text-align: justify;
+  color: var (--black);
+  font-size: 12px;
+}
+
+.social-icons {
+  margin-top: 3rem;
+  text-align: justify;
+  color: var (--black);
+  font-size: 3rem;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 3rem;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 2px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #15aabf;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+input[type="submit"]:hover {
+  background-color: #5fb0cb;
+}
+.col-xs-6 {
+  margin-left: 5rem;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: transparents;
+  padding: 20px;
+}
+
+.footer {
+  background: var(--black);
+  text-align: center;
+}
+
+.footer .credit {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: lighter;
+  padding: 1.5rem;
+}
+
+.footer .credit span {
+  color: var(--main-color);
+}
+
+/* media queries  */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: inline-block;
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background: #fff;
+    width: 30rem;
+    height: calc(100vh - 9.5rem);
+  }
+
+  .header .navbar.active {
+    right: 0;
+  }
+
+  .header .navbar a {
+    color: var(--black);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .header .search-form {
+    width: 90%;
+    right: 2rem;
+  }
+
+  .home {
+    background-position: left;
+
+    text-align: center;
+  }
+
+  .home .content h3 {
+    font-size: 4.5rem;
+    text-align: center;
+  }
+
+  .home .content p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  @media (max-width: 1200px) {
+    #gallery {
+      -moz-column-count: 4;
+      -webkit-column-count: 4;
+      column-count: 4;
+    }
+  }
+}
